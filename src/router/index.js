@@ -7,13 +7,14 @@ import EventShow from "../views/EventShow.vue";
 Vue.use(VueRouter);
 
 const routes = [
+  // mode: "history", look into history.pushstate API
   {
     path: "/",
     name: "event-list",
     component: EventList,
   },
   {
-    path: "/event/:eventname",
+    path: "/event/:id",
     name: "event-show",
     component: EventShow,
     props: true,
