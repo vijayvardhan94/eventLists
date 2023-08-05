@@ -19,19 +19,13 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    alias: "/about",
   },
   {
     path: "/event-calendar",
     name: "calendar",
     component: CalendarView,
-  },
-  {
-    path: "/about",
-    redirect: { name: "about" }, // redirect: "/about-us"
-  },
-  {
-    path: "/calendar",
-    redirect: { name: "calendar" },
+    alias: "/calendar",
   },
 ];
 
