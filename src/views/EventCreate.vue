@@ -1,20 +1,20 @@
 <template>
   <div>
-    <h1>{{ userName }}</h1>
-    <p>This is the {{ userId }}</p>
+    <h1>{{ user.name }}</h1>
+    <p>This is the {{ user.id }}</p>
+    <ul>
+      <li v-for="category in categories" :key="category">{{ category }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  computed: {
-    userName() {
-      return this.$store.state.user.name;
-    },
-    userId() {
-      return this.$store.state.user.id;
-    },
-  },
+  computed: mapState({
+    user: "user",
+    categories: "categories",
+  }),
 };
 </script>
 
